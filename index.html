@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple 2-User Chat</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="header-info">
+                    <h2>💬 Simple 2-User Chat</h2>
+                    <div class="connection-status">
+                        <span id="status-indicator" class="status-dot"></span>
+                        <span id="status-text">Connecting...</span>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <span id="current-user"></span>
+                </div>
+            </div>
+            
+            <div id="messages-container" class="messages-area">
+                <div class="welcome-message">
+                    <p>👋 Welcome to Simple Chat!</p>
+                    <p id="waiting-message">Waiting for the other user to connect...</p>
+                </div>
+            </div>
+            
+            <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                <span id="typing-user"></span> is typing...
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off" disabled>
+                <button id="send-btn" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
